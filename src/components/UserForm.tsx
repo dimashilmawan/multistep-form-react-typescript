@@ -36,26 +36,6 @@ const UserForm = ({
 				value={age}
 				onChange={e => updateFields({ age: e.target.value })}
 			/>
-			{/* <label>First Name</label>
-			<input
-				autoFocus
-				required
-				value={firstName}
-				onChange={e => updateFields({ firstName: e.target.value })}
-				// onChange={e => updateFields({ firstName: e.target.value })}
-			/> 
-			<label>Last Name</label>
-			<input
-				required
-				value={lastName}
-				onChange={e => updateFields({ lastName: e.target.value })}
-			/>
-			<label>Age</label>
-			<input
-				required
-				value={age}
-				onChange={e => updateFields({ age: e.target.value })}
-			/> */}
 		</FormWrapper>
 	);
 };

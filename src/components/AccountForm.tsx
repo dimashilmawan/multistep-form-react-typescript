@@ -11,7 +11,7 @@ type AccountFormProps = AccountData & {
 
 const AccountForm = ({ email, password, updateFields }: AccountFormProps) => {
 	return (
-		<FormWrapper title="Account Detail">
+		<FormWrapper title="Account Creation">
 			<Input
 				label="Email"
 				type="email"
@@ -25,19 +25,6 @@ const AccountForm = ({ email, password, updateFields }: AccountFormProps) => {
 				value={password}
 				onChange={e => updateFields({ password: e.target.value })}
 			/>
-			{/* <label>First Name</label>
-			<input
-				autoFocus
-				required
-				value={email}
-				onChange={e => updateFields({ email: e.target.value })}
-			/>
-			<label>Last Name</label>
-			<input
-				required
-				value={password}
-				onChange={e => updateFields({ password: e.target.value })}
-			/> */}
 		</FormWrapper>
 	);
 };

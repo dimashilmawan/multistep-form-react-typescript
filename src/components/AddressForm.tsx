@@ -19,9 +19,9 @@ const AddressForm = ({
 	updateFields,
 }: AddressFormProps) => {
 	return (
-		<FormWrapper title="Address Detail">
+		<FormWrapper title="Address">
 			<Input
-				label="street"
+				label="Street"
 				value={street}
 				autoFocus
 				onChange={e => updateFields({ street: e.target.value })}
@@ -41,31 +41,6 @@ const AddressForm = ({
 				value={zip}
 				onChange={e => updateFields({ zip: e.target.value })}
 			/>
-			{/* <label>street</label>
-			<input
-				autoFocus
-				required
-				value={street}
-				onChange={e => updateFields({ street: e.target.value })}
-			/>
-			<label>city</label>
-			<input
-				required
-				value={city}
-				onChange={e => updateFields({ city: e.target.value })}
-			/>
-			<label>state</label>
-			<input
-				required
-				value={state}
-				onChange={e => updateFields({ state: e.target.value })}
-			/>
-			<label>Zip</label>
-			<input
-				required
-				value={zip}
-				onChange={e => updateFields({ zip: e.target.value })}
-			/> */}
 		</FormWrapper>
 	);
 };

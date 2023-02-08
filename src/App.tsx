@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import AccountForm from "./components/AccountForm";
 import AddressForm from "./components/AddressForm";
+import Indicator from "./components/Indicator";
 import UserForm from "./components/UserForm";
 import { useMultistepForm } from "./hooks/useMultistepForm";
 
@@ -65,28 +66,33 @@ function App() {
 	};
 
 	return (
-		<div className="h-screen bg-gray-100 pt-20">
+		<div className="h-screen bg-emerald-200 pt-10">
 			{/* CARD */}
-			<div className="relative mx-auto max-w-lg rounded-xl bg-white   py-4 px-8 shadow-lg">
+			<div className="relative mx-auto max-w-md rounded-xl bg-gray-100   py-6 px-10 shadow-xl shadow-emerald-300">
 				{/* FORM */}
 				<form onSubmit={submitHandler} className=" ">
+					{/* INDICATOR */}
+					<Indicator
+						currentStepIndex={currentStepIndex}
+						stepsLength={steps.length}
+					/>
 					{/* TITLE LABEL INPUT WRAPER  */}
 					{step}
 
 					{/* BUTTON WRAPPER */}
-					<div className="mt-8 flex justify-end gap-3">
+					<div className="mt-6 flex justify-end gap-3">
 						{!isFirstStep && (
 							<button
 								onClick={back}
 								type="button"
-								className=" rounded-md px-2 py-1 font-medium text-gray-500  focus:outline-none focus:ring-2 focus:ring-emerald-600"
+								className=" rounded-md px-4 py-1 font-medium text-gray-500  focus:outline-none focus:ring-2 focus:ring-emerald-600"
 							>
 								Back
 							</button>
 						)}
 						<button
 							type="submit"
-							className="rounded-md bg-emerald-600 px-3 py-1  font-semibold text-white focus:scale-105 focus:bg-emerald-500 focus:outline-none"
+							className="rounded-md bg-emerald-500 px-6 py-1 font-semibold  text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
 						>
 							{!isLastStep ? "Next" : "Finish"}
 						</button>
