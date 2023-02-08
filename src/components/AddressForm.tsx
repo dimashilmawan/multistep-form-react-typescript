@@ -1,4 +1,5 @@
 import FormWrapper from "./FormWrapper";
+import Input from "./ui/Input";
 type AddressData = {
 	street: string;
 	city: string;
@@ -19,7 +20,28 @@ const AddressForm = ({
 }: AddressFormProps) => {
 	return (
 		<FormWrapper title="Address Detail">
-			<label>street</label>
+			<Input
+				label="street"
+				value={street}
+				autoFocus
+				onChange={e => updateFields({ street: e.target.value })}
+			/>
+			<Input
+				label="City"
+				value={city}
+				onChange={e => updateFields({ city: e.target.value })}
+			/>
+			<Input
+				label="State"
+				value={state}
+				onChange={e => updateFields({ state: e.target.value })}
+			/>
+			<Input
+				label="Zip"
+				value={zip}
+				onChange={e => updateFields({ zip: e.target.value })}
+			/>
+			{/* <label>street</label>
 			<input
 				autoFocus
 				required
@@ -43,7 +65,7 @@ const AddressForm = ({
 				required
 				value={zip}
 				onChange={e => updateFields({ zip: e.target.value })}
-			/>
+			/> */}
 		</FormWrapper>
 	);
 };

@@ -28,6 +28,12 @@ const INITIAL_DATA: FormData = {
 	password: "",
 };
 
+{
+	/* <div className="absolute top-1 right-1">
+{currentStepIndex + 1} / {steps.length}
+</div> */
+}
+
 function App() {
 	const [data, setData] = useState(INITIAL_DATA);
 
@@ -59,23 +65,34 @@ function App() {
 	};
 
 	return (
-		<div className="relative m-4 mx-auto max-w-lg rounded-lg border-2 border-emerald-800 bg-emerald-500 p-4">
-			<form onSubmit={submitHandler}>
-				<div className="absolute top-1 right-1">
-					{currentStepIndex + 1} / {steps.length}
-				</div>
-				{step}
-				<div className="mt-4 flex justify-end gap-2">
-					{!isFirstStep && (
-						<button onClick={back} type="button" className="bg-white px-2 py-1">
-							Back
+		<div className="h-screen bg-gray-100 pt-20">
+			{/* CARD */}
+			<div className="relative mx-auto max-w-lg rounded-xl bg-white   py-4 px-8 shadow-lg">
+				{/* FORM */}
+				<form onSubmit={submitHandler} className=" ">
+					{/* TITLE LABEL INPUT WRAPER  */}
+					{step}
+
+					{/* BUTTON WRAPPER */}
+					<div className="mt-8 flex justify-end gap-3">
+						{!isFirstStep && (
+							<button
+								onClick={back}
+								type="button"
+								className=" rounded-md px-2 py-1 font-medium text-gray-500  focus:outline-none focus:ring-2 focus:ring-emerald-600"
+							>
+								Back
+							</button>
+						)}
+						<button
+							type="submit"
+							className="rounded-md bg-emerald-600 px-3 py-1  font-semibold text-white focus:scale-105 focus:bg-emerald-500 focus:outline-none"
+						>
+							{!isLastStep ? "Next" : "Finish"}
 						</button>
-					)}
-					<button type="submit" className="bg-white px-2 py-1">
-						{!isLastStep ? "Next" : "Finish"}
-					</button>
-				</div>
-			</form>
+					</div>
+				</form>
+			</div>
 		</div>
 	);
 }
