@@ -29,12 +29,6 @@ const INITIAL_DATA: FormData = {
 	password: "",
 };
 
-{
-	/* <div className="absolute top-1 right-1">
-{currentStepIndex + 1} / {steps.length}
-</div> */
-}
-
 function App() {
 	const [data, setData] = useState(INITIAL_DATA);
 
@@ -44,7 +38,6 @@ function App() {
 
 	const {
 		step,
-		steps,
 		currentStepIndex,
 		setCurrentStepIndex,
 		isFirstStep,
@@ -72,10 +65,7 @@ function App() {
 				{/* FORM */}
 				<form onSubmit={submitHandler} className=" ">
 					{/* INDICATOR */}
-					<Indicator
-						currentStepIndex={currentStepIndex}
-						stepsLength={steps.length}
-					/>
+					<Indicator currentStepIndex={currentStepIndex} />
 					{/* TITLE LABEL INPUT WRAPER  */}
 					{step}
 

@@ -1,9 +1,8 @@
 type IndicatorProps = {
 	currentStepIndex: number;
-	stepsLength: number;
 };
 
-const Indicator = ({ currentStepIndex, stepsLength }: IndicatorProps) => {
+const Indicator = ({ currentStepIndex }: IndicatorProps) => {
 	console.log(currentStepIndex === 0);
 	return (
 		<div className="mx-auto flex w-5/6 items-center text-white">
